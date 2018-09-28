@@ -8,6 +8,7 @@ namespace StringMaxMin
     {
         public string initialString;
         public char[] delimiters = new char[] { ' ', ',', '.', '!', '?', ':', ';' };
+        string partition = String.Empty;
         public Partition(string input)
         {
             this.initialString = input;
@@ -34,18 +35,20 @@ namespace StringMaxMin
                         partition[i + 1] = temp;
                         verif = true;
                     }
-                }
-                foreach (var item in partition)
-                {
-                    Console.WriteLine($"{item}");
-                }
-                
-                
+                }    
             } while (verif);
+            foreach (var item in partition)
+            {
+                Console.WriteLine($"{item}");
+            }
 
             var first = partition.First();
             var last = partition.Last();
             Console.WriteLine($"Minimal length of a word is  {first}, \b Maximal length of a word is {last}");
+        }
+        public void Print()
+        {
+
         }
         
         
