@@ -24,15 +24,25 @@ namespace StringMaxMin
             do
             {
                 verif = false;
-                for (int i = 0; i < partition.Length; i++)
+                string temp;
+                for (int i = 0; i < partition.Length-1; i++)
                 {
                     if (partition[i].Length > partition[i + 1].Length)
-                    { }
+                    {
+                        temp = partition[i];
+                        partition[i] = partition[i + 1];
+                        partition[i + 1] = temp;
+                        verif = true;
+                    }
+                }
+                foreach (var item in partition)
+                {
+                    Console.WriteLine($"{item}");
                 }
                 
+                
             } while (verif);
-            
-        }
+                }
         
         /*public void CompareLength ()
         {
