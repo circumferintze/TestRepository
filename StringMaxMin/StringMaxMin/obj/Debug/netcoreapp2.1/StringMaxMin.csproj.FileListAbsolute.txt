@@ -2,3 +2,10 @@ C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\obj\Debug\netco
 C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\obj\Debug\netcoreapp2.1\StringMaxMin.csproj.CoreCompileInputs.cache
 C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\obj\Debug\netcoreapp2.1\StringMaxMin.AssemblyInfoInputs.cache
 C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\obj\Debug\netcoreapp2.1\StringMaxMin.AssemblyInfo.cs
+C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\bin\Debug\netcoreapp2.1\StringMaxMin.deps.json
+C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\bin\Debug\netcoreapp2.1\StringMaxMin.runtimeconfig.json
+C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\bin\Debug\netcoreapp2.1\StringMaxMin.runtimeconfig.dev.json
+C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\bin\Debug\netcoreapp2.1\StringMaxMin.dll
+C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\bin\Debug\netcoreapp2.1\StringMaxMin.pdb
+C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\obj\Debug\netcoreapp2.1\StringMaxMin.dll
+C:\Projects L\Project 1\TestRepository\StringMaxMin\StringMaxMin\obj\Debug\netcoreapp2.1\StringMaxMin.pdb
