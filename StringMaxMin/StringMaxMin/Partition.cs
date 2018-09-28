@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace StringMaxMin
 {
@@ -42,7 +42,12 @@ namespace StringMaxMin
                 
                 
             } while (verif);
-                }
+
+            var first = partition.First();
+            var last = partition.Last();
+            Console.WriteLine($"Minimal length of a word is  {first}, \b Maximal length of a word is {last}");
+        }
+        
         
         /*public void CompareLength ()
         {
