@@ -14,10 +14,12 @@ namespace StringMaxMin
             this.initialString = input;
         }
 
-        public string[] PartitionOfString()
+        public void PartitionOfString()
         {
-            bool verif;
-            string[] partition = initialString.Split(delimiters);
+            //bool verif;
+            List<string> partition = initialString.Split(delimiters).ToList();
+            var minWord = partition.Where(w => w.Length == partition.Min(x => x.Length));
+            /*
             do
             {
                 verif = false;
@@ -36,7 +38,7 @@ namespace StringMaxMin
             var first = partition.First();
             var last = partition.Last();
             Console.WriteLine($"Word with minimal length is {first}, \b Word with maximal length is  {last}");
-            return partition;
+            return partition;*/
         }
         
     }
