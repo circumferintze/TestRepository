@@ -8,20 +8,20 @@ namespace StringMaxMin
     {
         public string initialString;
         public char[] delimiters = new char[] { ' ', ',', '.', '!', '?', ':', ';' };
-        string partition = String.Empty;
+        public string[] a1;
         public Partition(string input)
         {
             this.initialString = input;
         }
 
-        public void PartitionOfString()
+        public string[] PartitionOfString()
         {
             bool verif;
             string[] partition = initialString.Split(delimiters);
-            foreach (var item in partition)
+           /* foreach (var item in partition)
             {
                 Console.WriteLine($"{item}, {item.Length}");
-            }
+            }*/
             do
             {
                 verif = false;
@@ -37,17 +37,24 @@ namespace StringMaxMin
                     }
                 }    
             } while (verif);
-            foreach (var item in partition)
+            /*foreach (var item in partition)
             {
                 Console.WriteLine($"{item}");
             }
+            */
+            
 
             var first = partition.First();
             var last = partition.Last();
             Console.WriteLine($"Minimal length of a word is  {first}, \b Maximal length of a word is {last}");
+            return partition;
         }
-        public void Print()
+        public void Print(string[] partition)
         {
+            foreach (var item in partition)
+            {
+                Console.WriteLine($"{item}, {item.Length}");
+            }
 
         }
         

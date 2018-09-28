@@ -9,6 +9,7 @@ namespace StringMaxMin
         {
             Partition partition = new Partition("Still loving you Scorpions x");
             partition.PartitionOfString();
+            partition.Print();
             Console.ReadKey();
         }
     }
