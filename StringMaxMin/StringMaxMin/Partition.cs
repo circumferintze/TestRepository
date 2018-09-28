@@ -19,6 +19,8 @@ namespace StringMaxMin
             //bool verif;
             List<string> partition = initialString.Split(delimiters).ToList();
             var minWord = partition.Where(w => w.Length == partition.Min(x => x.Length));
+            var maxWord = partition.Where(w => w.Length == partition.Max(y => y.Length));
+            
             /*
             do
             {
