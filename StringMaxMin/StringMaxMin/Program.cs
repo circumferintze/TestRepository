@@ -7,7 +7,9 @@ namespace StringMaxMin
         
         public static void Main(string[] args)
         {
-            Partition partition = new Partition("Still loving you Scorpions x");
+            Console.WriteLine("Insert your message");
+            string s = Console.ReadLine();
+            Partition partition = new Partition(s);
             partition.PartitionOfString();
             Console.ReadKey();
         }

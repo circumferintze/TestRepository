@@ -35,7 +35,7 @@ namespace StringMaxMin
             } while (verif);
             var first = partition.First();
             var last = partition.Last();
-            Console.WriteLine($"Minimal length of a word is  {first}, \b Maximal length of a word is {last}");
+            Console.WriteLine($"Word with minimal length is {first}, \b Word with maximal length is  {last}");
             return partition;
         }
         
