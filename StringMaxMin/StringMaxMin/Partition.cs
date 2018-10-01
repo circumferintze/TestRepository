@@ -40,7 +40,7 @@ namespace StringMaxMin
             var maxWord = afterPartition.Where(w => w.Length == afterPartition.Max(y => y.Length)).ToList();*/
 
             Console.WriteLine("Words with min legth : ");
-            wordMin.ToList().ForEach(a => Console.Write(a + " "));
+            wordMin.ToList().ForEach(a => Console.Write(a));
             Console.WriteLine();
             
             Console.WriteLine("Words with max legth : ");
