@@ -13,13 +13,14 @@ namespace StringMaxMin
         {
             this.initialString = input;
         }
-        public string[] PartitionOfWords()
+        /*public string[] PartitionOfWords()
         {
-        string[] partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+       
         return partition;
-        }
+        }*/
         public List<string> ReturnWordsWithMinimumLength()
-        { 
+        {
+            string[] partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             string wordMin = "";
             int m = partition.Length;
             List<string> allMinWords = new List<string>();
@@ -30,6 +31,7 @@ namespace StringMaxMin
                     wordMin = item;
                     m = item.Length;
                 }
+                
             }
             for (int i = 0; i < partition.Length; i++)
             { 
@@ -41,6 +43,7 @@ namespace StringMaxMin
         }
         public List<string> ReturnWordsWithMaximumLength()
         {
+            string[] partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             string wordMax = "";
             int n = 0;
             List<string> allMaxWords = new List<string>();
@@ -55,10 +58,10 @@ namespace StringMaxMin
             for (int i = 0; i < partition.Length; i++)
             {
                 if (partition[i].Length == n)
+                
                     allMaxWords.Add(partition[i]);
             }
-            List<string> allMaxWordsFinal = allMaxWords.Distinct().ToList();
-            return allMaxWordsFinal;
+            return allMaxWords;
         }
 
     }
