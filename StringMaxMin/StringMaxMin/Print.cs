@@ -4,7 +4,14 @@ using System.Text;
 
 namespace StringMaxMin
 {
-    class Print
+    static class Print
     {
+        public static void PrintCollection( this List<string> a )
+        {
+            
+           
+            a.ForEach(x => Console.Write(x + " "));
+         
+        }
     }
 }
