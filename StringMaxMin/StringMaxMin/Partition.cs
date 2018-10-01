@@ -4,66 +4,52 @@ using System.Linq;
 
 namespace StringMaxMin
 {
-    public class Partition
+    public class Partition : IPartition
     {
-        public string initialString;
-        public char[] delimiters = new char[] { ' ', ',', '.', '!', '?', ':', ';' };
-        public string[] partition;
+        private string initialString;
+        private char[] delimiters = new char[] { ' ', ',', '.', '!', '?', ':', ';' };
+        private string[] partition;
+
         public Partition(string input)
         {
             this.initialString = input;
         }
-        /*public string[] PartitionOfWords()
+
+        public IEnumerable<string> GetShortestWords()
         {
-       
-        return partition;
-        }*/
-        public List<string> ReturnWordsWithMinimumLength()
-        {
-            string[] partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-            string wordMin = "";
-            int m = partition.Length;
-            List<string> allMinWords = new List<string>();
-            foreach (var item in partition)
-            {
-                if(item.Length < m)
-                {
-                    wordMin = item;
-                    m = item.Length;
-                }
-                
-            }
-            for (int i = 0; i < partition.Length; i++)
-            { 
-                if (partition[i].Length == m)
-                    allMinWords.Add(partition[i]);
-            }
-            List<string> allMinWordsFinal = allMinWords.Distinct().ToList();
-            return allMinWordsFinal;
+            return GetWordsForStrategy((n, o) => n < o);
         }
-        public List<string> ReturnWordsWithMaximumLength()
+
+        public IEnumerable<string> GetLongestWords()
         {
-            string[] partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            return GetWordsForStrategy((n, o) => n > o);
+        }
+
+        private IEnumerable<string> GetWordsForStrategy(Func<int, int, bool> condition)
+        {
+            if (partition == null || !partition.Any())
+                partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
             string wordMax = "";
-            int n = 0;
+            int previousExtremeValue = 0;
             List<string> allMaxWords = new List<string>();
             foreach (var item in partition)
             {
-                if (item.Length > n)
+                if (condition.Invoke(item.Length, previousExtremeValue))
                 {
                     wordMax = item;
-                    n = item.Length;
+                    previousExtremeValue = item.Length;
                 }
             }
+
             for (int i = 0; i < partition.Length; i++)
             {
-                if (partition[i].Length == n)
-                
+                if (partition[i].Length == previousExtremeValue)
+
                     allMaxWords.Add(partition[i]);
             }
             List<string> allMaxWordsFinal = allMaxWords.Distinct().ToList();
             return allMaxWordsFinal;
         }
-
     }
 }
