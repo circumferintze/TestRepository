@@ -27,13 +27,14 @@ namespace StringMaxMin
             {
                 if(item.Length > n)
                 {
-                    wordMax = item;
-                    n = item.Length;
+                    wordMin = item;
+                    m = item.Length;
                 }
                 if (item.Length < m)
                 {
-                    wordMin = item;
-                    m = item.Length;
+                    wordMax = item;
+                    n = item.Length;
+                   
                 }
             }
             for (int i = 0; i < partition.Length; i++)
