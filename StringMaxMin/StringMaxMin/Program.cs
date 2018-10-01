@@ -9,7 +9,7 @@ namespace StringMaxMin
         {
             Console.WriteLine("Insert your message");
             //string s = Console.ReadLine();
-            string s = "Love me xx tender love me true Elvis Presley yyyyyyy";
+            string s = "Love me xx tender love me true Elvis Presley yyyyyyy hkhkh";
             Partition partition = new Partition(s);
             partition.PartitionOfString();
             Console.ReadKey();

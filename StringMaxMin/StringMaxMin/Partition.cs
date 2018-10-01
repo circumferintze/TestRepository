@@ -39,7 +39,7 @@ namespace StringMaxMin
             }
             for (int i = 0; i < partition.Length-1; i++)
             {
-                    if (partition[i].Length == n)
+                if (partition[i].Length == n)
                     {
 
                     allMinWords.Add(partition[i]);
@@ -51,14 +51,17 @@ namespace StringMaxMin
                 }
 
             }
-           
+            List<string> allMinWordsFinal = allMinWords.Distinct().ToList();
+            List<string> allMaxWordsFinal = allMaxWords.Distinct().ToList();
 
-            Console.WriteLine("Words with min legth : ");
-            allMinWords.ForEach(a => Console.Write(a));
+
+
+            Console.WriteLine("Words with max length : ");
+            allMinWordsFinal.ForEach(a => Console.Write(a+" "));
             Console.WriteLine();
             
-            Console.WriteLine("Words with max legth : ");
-            allMaxWords.ForEach(a => Console.Write(a));
+            Console.WriteLine("Words with min length : ");
+            allMaxWordsFinal.ForEach(a => Console.Write(a +" "));
             
 
         }
