@@ -22,6 +22,8 @@ namespace StringMaxMin
             string wordMin = "";
             int n =0;
             int m = partition.Length;
+            List<string> allMinWords = new List<string>();
+            List<string> allMaxWords = new List<string>();
             foreach (var item in partition)
             {
                 if(item.Length > n)
@@ -35,16 +37,30 @@ namespace StringMaxMin
                     m = item.Length;
                 }
             }
+            for (int i = 0; i < partition.Length-1; i++)
+            {
+                    if (partition[i].Length == n)
+                    {
+
+                    allMinWords.Add(partition[i]);
+                    }
+                if (partition[i].Length == m)
+                {
+
+                    allMaxWords.Add(partition[i]);
+                }
+
+            }
             //var afterPartition = partition.Where(w => w.Length != 0).ToList();
             /*var minWord = afterPartition.Where(w => w.Length == afterPartition.Min(x => x.Length)).ToList();
             var maxWord = afterPartition.Where(w => w.Length == afterPartition.Max(y => y.Length)).ToList();*/
 
             Console.WriteLine("Words with min legth : ");
-            wordMin.ToList().ForEach(a => Console.Write(a));
+            allMinWords.ForEach(a => Console.Write(a));
             Console.WriteLine();
             
             Console.WriteLine("Words with max legth : ");
-            wordMax.ToList().ForEach(a => Console.Write(a));
+            allMaxWords.ForEach(a => Console.Write(a));
             
 
             /*
