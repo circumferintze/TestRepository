@@ -16,7 +16,6 @@ namespace StringMaxMin
 
         public void PartitionOfString()
         {
-            //bool verif;
             string[] partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             string wordMax = "";
             string wordMin = "";
@@ -37,25 +36,21 @@ namespace StringMaxMin
                     m = item.Length;
                 }
             }
-            for (int i = 0; i < partition.Length-1; i++)
+            for (int i = 0; i < partition.Length; i++)
             {
                 if (partition[i].Length == n)
                     {
-
                     allMinWords.Add(partition[i]);
                     }
                 if (partition[i].Length == m)
                 {
-
                     allMaxWords.Add(partition[i]);
                 }
 
             }
             List<string> allMinWordsFinal = allMinWords.Distinct().ToList();
             List<string> allMaxWordsFinal = allMaxWords.Distinct().ToList();
-
-
-
+            
             Console.WriteLine("Words with max length : ");
             allMinWordsFinal.ForEach(a => Console.Write(a+" "));
             Console.WriteLine();
