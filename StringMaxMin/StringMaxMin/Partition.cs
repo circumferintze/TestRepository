@@ -51,9 +51,7 @@ namespace StringMaxMin
                 }
 
             }
-            //var afterPartition = partition.Where(w => w.Length != 0).ToList();
-            /*var minWord = afterPartition.Where(w => w.Length == afterPartition.Min(x => x.Length)).ToList();
-            var maxWord = afterPartition.Where(w => w.Length == afterPartition.Max(y => y.Length)).ToList();*/
+           
 
             Console.WriteLine("Words with min legth : ");
             allMinWords.ForEach(a => Console.Write(a));
@@ -63,26 +61,6 @@ namespace StringMaxMin
             allMaxWords.ForEach(a => Console.Write(a));
             
 
-            /*
-            do
-            {
-                verif = false;
-                string temp;
-                for (int i = 0; i < partition.Length-1; i++)
-                {
-                    if (partition[i].Length > partition[i + 1].Length)
-                    {
-                        temp = partition[i];
-                        partition[i] = partition[i + 1];
-                        partition[i + 1] = temp;
-                        verif = true;
-                    }
-                }    
-            } while (verif);
-            var first = partition.First();
-            var last = partition.Last();
-            Console.WriteLine($"Word with minimal length is {first}, \b Word with maximal length is  {last}");
-            return partition;*/
         }
         
     }
