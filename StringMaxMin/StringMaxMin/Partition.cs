@@ -17,27 +17,35 @@ namespace StringMaxMin
         public void PartitionOfString()
         {
             //bool verif;
-            List<string> partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).ToList();
-            string word = "";
+            string[] partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            string wordMax = "";
+            string wordMin = "";
             int n =0;
+            int m = partition.Length;
             foreach (var item in partition)
             {
                 if(item.Length > n)
                 {
-                    word = item;
+                    wordMax = item;
                     n = item.Length;
+                }
+                if (item.Length < m)
+                {
+                    wordMin = item;
+                    m = item.Length;
                 }
             }
             //var afterPartition = partition.Where(w => w.Length != 0).ToList();
             /*var minWord = afterPartition.Where(w => w.Length == afterPartition.Min(x => x.Length)).ToList();
             var maxWord = afterPartition.Where(w => w.Length == afterPartition.Max(y => y.Length)).ToList();*/
 
-            /*Console.WriteLine("Words with min legth : ");
-            minWord.ForEach(a => Console.Write(a + " "));
+            Console.WriteLine("Words with min legth : ");
+            wordMin.ToList().ForEach(a => Console.Write(a + " "));
             Console.WriteLine();
+            
             Console.WriteLine("Words with max legth : ");
-            maxWord.ForEach(a => Console.Write(a + " "));
-            */
+            wordMax.ToList().ForEach(a => Console.Write(a));
+            
 
             /*
             do
