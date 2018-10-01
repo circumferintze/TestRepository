@@ -25,12 +25,12 @@ namespace StringMaxMin
             List<string> allMaxWords = new List<string>();
             foreach (var item in partition)
             {
-                if(item.Length > n)
+                if(item.Length < m)
                 {
                     wordMin = item;
                     m = item.Length;
                 }
-                if (item.Length < m)
+                if (item.Length > n)
                 {
                     wordMax = item;
                     n = item.Length;                   
@@ -38,11 +38,11 @@ namespace StringMaxMin
             }
             for (int i = 0; i < partition.Length; i++)
             {
-                if (partition[i].Length == n)
+                if (partition[i].Length == m)
                     {
                     allMinWords.Add(partition[i]);
                     }
-                if (partition[i].Length == m)
+                if (partition[i].Length == n)
                 {
                     allMaxWords.Add(partition[i]);
                 }
@@ -50,12 +50,9 @@ namespace StringMaxMin
             }
             List<string> allMinWordsFinal = allMinWords.Distinct().ToList();
             List<string> allMaxWordsFinal = allMaxWords.Distinct().ToList();
-            
-            Console.WriteLine("Words with min length : ");
-            allMinWordsFinal.ForEach(a => Console.Write(a + " "));
-            Console.WriteLine();            
-            Console.WriteLine("Words with max length : ");
-            allMaxWordsFinal.ForEach(a => Console.Write(a +" "));
+
+           allMinWordsFinal.PrintCollection();
+           allMaxWordsFinal.PrintCollection();
             
 
         }

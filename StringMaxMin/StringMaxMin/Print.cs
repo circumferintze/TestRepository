@@ -6,12 +6,10 @@ namespace StringMaxMin
 {
     static class Print
     {
-        public static void PrintCollection( this List<string> a )
+        public static void PrintCollection( this List<string> a)
         {
-            
-           
-            a.ForEach(x => Console.Write(x + " "));
-         
+            a.ForEach(x => Console.Write($"{x} "));
+            Console.WriteLine();
         }
     }
 }

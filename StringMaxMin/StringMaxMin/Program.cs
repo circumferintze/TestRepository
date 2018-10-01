@@ -12,6 +12,7 @@ namespace StringMaxMin
             string s = "Love me xx tender love me true Elvis Presley yyyyyyy";
             Partition partition = new Partition(s);
             partition.PartitionOfString();
+            
             Console.ReadKey();
         }
     }
