@@ -15,9 +15,9 @@ namespace StringMaxMin
             Partition partition = new Partition(s);
             List<string> minWords = partition.ReturnWordsWithMinimumLength();
             List<string> maxWords = partition.ReturnWordsWithMaximumLength();
-            Console.Write($"Words with minimum length :");
+            Console.Write($"Words with minimum length: ");
             minWords.PrintCollection();
-            Console.Write($"Words with maximum length :");
+            Console.Write($"Words with maximum length: ");
             maxWords.PrintCollection();
             Console.ReadKey();
         }

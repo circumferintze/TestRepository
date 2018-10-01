@@ -61,7 +61,8 @@ namespace StringMaxMin
                 
                     allMaxWords.Add(partition[i]);
             }
-            return allMaxWords;
+            List<string> allMaxWordsFinal = allMaxWords.Distinct().ToList();
+            return allMaxWordsFinal;
         }
 
     }
