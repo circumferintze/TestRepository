@@ -30,9 +30,11 @@ namespace StringMaxMin
             if (partition == null || !partition.Any())
                 partition = initialString.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
-            string wordMax = "";
-            int previousExtremeValue = 0;
-            List<string> allMaxWords = new List<string>();
+            if (!partition.Any())
+                return Enumerable.Empty<string>();
+
+            string wordMax = partition.First();
+            int previousExtremeValue = wordMax.Length;
             foreach (var item in partition)
             {
                 if (condition.Invoke(item.Length, previousExtremeValue))
@@ -42,14 +44,27 @@ namespace StringMaxMin
                 }
             }
 
+            List<string> allMaxWords = new List<string>();
             for (int i = 0; i < partition.Length; i++)
             {
                 if (partition[i].Length == previousExtremeValue)
-
                     allMaxWords.Add(partition[i]);
             }
             List<string> allMaxWordsFinal = allMaxWords.Distinct().ToList();
             return allMaxWordsFinal;
+        }
+    }
+
+    internal class PartitionFactory
+    {
+        public IPartition GetPartition(IStringProvider stringProvider)
+        {
+            return new Partition(stringProvider.GetValue());
+        }
+
+        public IPartition GetPartition(string value)
+        {
+            return new Partition(value);
         }
     }
 }

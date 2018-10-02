@@ -2,20 +2,22 @@
 
 namespace StringMaxMin
 {
-    public class StringAnalyzer
+    internal class StringAnalyzer
     {
         private IWriter writer;
-        private IPartition partition;
+        private PartitionFactory partitionFactory;
+        private readonly IStringProvider stringProvider;
 
-        public StringAnalyzer(IWriter writer, IPartition partition)
+        public StringAnalyzer(IWriter writer, PartitionFactory partition, IStringProvider stringProvider)
         {
             this.writer = writer;
-            this.partition = partition;
+            this.partitionFactory = partition;
+            this.stringProvider = stringProvider;
         }
 
-        public void Analyze(string input)
+        public void Analyze()
         {
-            writer.WriteLine("Insert your message");
+            var partition = partitionFactory.GetPartition(stringProvider);
             var minWords = partition.GetShortestWords();
             var maxWords = partition.GetLongestWords();
             writer.Write($"Words with minimum length: ");

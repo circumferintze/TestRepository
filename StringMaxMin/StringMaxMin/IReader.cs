@@ -2,7 +2,7 @@
 {
     interface IReader
     {
-        void Read();
-        void ReadLine();
+        string Read();
+        string ReadLine();
     }
 }
